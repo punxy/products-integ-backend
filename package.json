@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint --ignore-path .gitignore .",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|)\""
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|)\"",
+    "runserver": "node server.js"
   },
   "author": "Sebastian Silva Carrasco",
   "license": "ISC",

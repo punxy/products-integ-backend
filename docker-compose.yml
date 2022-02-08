@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  mongo_container:
+    container_name: mongodb-local
+    platform: linux/amd64
+    image: mongo:3.6.8
+    volumes:
+      - mongodb:/database
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: productListUser
+      MONGO_INITDB_ROOT_PASSWORD: productListPassword
+
+  node:
+    container_name: api_node
+    restart: always
+    depends_on:
+      - mongo_container
+    build: ./docker/node/
+    env_file: ./.env
+    command: /bin/sh -c "npm install && cd client && npm install && cd .. && yarn dev"
+    ports:
+      - "80:3000"
+    volumes:
+      - ".:/source"
+      - node_modules:/source/node_modules
+
+volumes:
+  mongodb: {}
+  node_modules:
