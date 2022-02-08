@@ -18,15 +18,14 @@ services:
     restart: always
     depends_on:
       - mongo_container
-    build: ./docker/node/
+    build: ./
     env_file: ./.env
-    command: /bin/sh -c "npm install && cd client && npm install && cd .. && yarn dev"
     ports:
-      - "80:3000"
+      - "3000:3000"
     volumes:
-      - ".:/source"
+      - ./:/home/node/app
       - node_modules:/source/node_modules
 
 volumes:
   mongodb: {}
-  node_modules:
+  node_modules: {}
