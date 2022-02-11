@@ -3,8 +3,8 @@ version: "3.9"
 services:
   mongo_container:
     container_name: mongodb-local
-    platform: linux/amd64
-    image: mongo:3.6.8
+    # platform: linux/amd64,linux/arm64,linux/arm/v8
+    image: arm64v8/mongo
     volumes:
       - mongodb:/database
     ports:

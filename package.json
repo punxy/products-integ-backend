@@ -27,5 +27,14 @@
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1",
     "supertest": "^6.2.2"
+  },
+  "config": {
+    "mongodbMemoryServer": {
+      "systemBinary": "/opt/homebrew/bin/mongod",
+      "arch": "x64",
+      "disablePostinstall": "1",
+      "version": "^8.3.0",
+      "debug": "0"
+    }
   }
 }
