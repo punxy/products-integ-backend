@@ -1,8 +1,8 @@
-require('dotenv').config()
-const { app } = require("./app")
+import 'dotenv/config'
+import app from './app.js'
 
-if (require.main === module) {
-	app.listen(process.env.NODE_PORT, () => console.log(`listening on port ${process.env.NODE_PORT}`))
-}
+app.listen(process.env.NODE_PORT, () =>
+  console.log(`listening on port ${process.env.NODE_PORT}`)
+)
 
-module.exports.app = app
+export default app

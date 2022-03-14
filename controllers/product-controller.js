@@ -1,17 +1,23 @@
-const { store } = require("../services/product-service")
+import { getProducts } from '../services/product-service.js'
+import { isItAPalindrome } from '../utils.js'
 
-module.exports.createProduct = async (req, res) => {
-  const { name, description, price } = req.body
-  const _id = "abc"
+export const getPromotions = async (req, res) => {
+
+  let discount = false
+  const find = req.query.find
+  const products = await getProducts(find);
+
+  if(typeof find !== 'undefined' && isItAPalindrome(find)){
+    discount = true
+
+    products.map( product => {
+      product.price = product.price * 0.5
+      return product;
+    })
+  }
   
-  const product = await store({ name, description, price })
-
-  console.log(product);
-
   res.status(201).json({
-    name,
-    description,
-    price,
-    _id,
+    discount,
+    products
   })
 }

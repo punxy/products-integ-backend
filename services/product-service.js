@@ -1,13 +1,14 @@
-const mongoose = require("mongoose")
-const Product = require("../models/Product")
+import Product from '../models/Product.js'
+import { isItAId } from '../utils.js'
 
+export const getProducts = async filter => {
+  if(isItAId(filter)){
+    return await Product.findOne({
+      'id': filter
+    });
+  }
 
-module.exports.store = async ({ name, description, price }) => {
-  const product = new Product({
-    name,
-    description,
-    price,
+  return await Product.find({
+    $or: [{description: filter},{brand: filter}],
   })
-  await product.save()
-  return product
 }

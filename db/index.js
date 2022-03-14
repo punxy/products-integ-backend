@@ -1,38 +1,38 @@
-const mongoose = require("mongoose")
-const { MongoMemoryServer } = require("mongodb-memory-server")
+import mongoose from 'mongoose'
+import { MongoMemoryServer } from 'mongodb-memory-server'
 
 mongoose.Promise = Promise
 
+export const getUri = async () => {
+  const mongoServer = await MongoMemoryServer.create()
+  if (process.env.NODE_ENV === 'test') {
+    return await mongoServer.getUri()
+  }
 
-module.exports.getUri = async () => {
-	const mongoServer = await MongoMemoryServer.create()
-	if (process.env.NODE_ENV === "test") {
-	 	return await mongoServer.getUri()
-	}
-
-	return process.env.DB_URI
+  return process.env.DB_URI
 }
 
-module.exports.connect = async ({ uri }) => {
+export const connect = async ({ uri }) => {
   const mongooseOpts = {
     useUnifiedTopology: true,
     useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false
   }
 
-  await mongoose.connect(uri, mongooseOpts)
-  console.log("conectado ??")
-
-  mongoose.connection.once("open", () => {
-    console.log(`MongoDB successfully connected to ${uri}`)
-  })
+  await mongoose.connect(uri, mongooseOpts).then(
+    () => {
+      console.log(`MongoDB successfully connected to ${uri}`)
+    },
+    (err) => {
+      console.log(`error to connect to: ${uri}`)
+      console.log(err)
+    }
+  )
 }
 
-// module.exports.closeDb = async () => {
-// 	const mongoServer = await MongoMemoryServer.create()
-//   await mongoose.disconnect()
-//   if (process.env.NODE_ENV === "test") {
-//     await mongoServer.stop()
-//   }
-// }
+export const closeDb = async () => {
+	const mongoServer = await MongoMemoryServer.create()
+  await mongoose.disconnect()
+  if (process.env.NODE_ENV === "test") {
+    await mongoServer.stop()
+  }
+}
