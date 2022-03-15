@@ -21,7 +21,7 @@ test('get product list', async t => {
 
 test('get products with discount', async t => {
     // enviamos un palindrome par activar el descuento
-    const filters = { find: 'abba' } 
+    const filters = { find: 'abba' }
     const response = await request(app)
         .get('/promotions')
         .query(filters);
@@ -36,4 +36,17 @@ test('get product without discount', async t => {
         .query(filters);
 
     t.false(response.body.discount)
+
+    const products = response.body.products
+    t.deepEqual(products.length, 0)
+})
+
+test('get product by id', async t => {
+    const filters = { find: 1 }
+    const response = await request(app)
+        .get('/promotions')
+        .query(filters);
+
+    const products = response.body.products
+    t.true(products.length == 1)
 })

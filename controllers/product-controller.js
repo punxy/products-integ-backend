@@ -1,23 +1,16 @@
-import { getProducts } from '../services/product-service.js'
-import { isItAPalindrome } from '../utils.js'
+import { getProducts, getProductById } from '../services/product-service.js'
+import { isItAId } from '../utils.js'
 
 export const getPromotions = async (req, res) => {
 
-  let discount = false
   const find = req.query.find
-  const products = await getProducts(find);
+  let results;
 
-  if(typeof find !== 'undefined' && isItAPalindrome(find)){
-    discount = true
-
-    products.map( product => {
-      product.price = product.price * 0.5
-      return product;
-    })
+  if(isItAId(find)){
+      results = await getProductById(find);
+  } else {
+      results = await getProducts(find);
   }
-  
-  res.status(201).json({
-    discount,
-    products
-  })
+
+  res.status(201).json(results)
 }
