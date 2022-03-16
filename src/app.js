@@ -13,9 +13,7 @@ const con = async () => {
 
 con()
 app.use(express.json())
-app.use(cors())
+app.use(cors({origin: '*'}))
 app.use('/', router)
-
 app.use(helmet.hidePoweredBy());
-
 module.exports = app
