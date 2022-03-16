@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1647437077581" clover="3.2.0">
-  <project timestamp="1647437077581" name="All files">
+<coverage generated="1647447306723" clover="3.2.0">
+  <project timestamp="1647447306723" name="All files">
     <metrics statements="98" coveredstatements="97" conditionals="24" coveredconditionals="23" methods="11" coveredmethods="11" elements="133" coveredelements="131" complexity="0" loc="98" ncloc="98" packages="5" files="8" classes="8"/>
     <package name="src">
       <metrics statements="38" coveredstatements="38" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
@@ -19,8 +19,8 @@
         <line num="15" count="2" type="stmt"/>
         <line num="16" count="2" type="stmt"/>
         <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
         <line num="19" count="2" type="stmt"/>
-        <line num="21" count="2" type="stmt"/>
       </file>
       <file name="router.js" path="/Users/sebastiansilva/node/products-integ-backend/src/router.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
