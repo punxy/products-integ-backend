@@ -1,18 +1,6 @@
 version: "3.9"
 
 services:
-  mongo_container:
-    container_name: mongodb-local
-    platform: linux/amd64
-    image: mongo:3.6.8
-    volumes:
-      - mongodb:/database
-    ports:
-      - "27017:27017"
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: productListUser
-      MONGO_INITDB_ROOT_PASSWORD: productListPassword
-
   node:
     container_name: api_node
     restart: always
@@ -27,5 +15,4 @@ services:
       - node_modules:/source/node_modules
 
 volumes:
-  mongodb: {}
   node_modules: {}

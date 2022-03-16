@@ -2,3 +2,7 @@ node_modules
 .DS_Store
 
 .env
+
+workspace.code-workspace
+
+.nyc_output/
