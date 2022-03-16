@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const helmet = require('helmet');
 const router = require('./router');
 const { connect, getUri } = require('./db');
@@ -12,6 +13,7 @@ const con = async () => {
 
 con()
 app.use(express.json())
+app.use(cors())
 app.use('/', router)
 
 app.use(helmet.hidePoweredBy());
