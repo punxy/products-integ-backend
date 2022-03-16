@@ -1,20 +1,19 @@
-import express from 'express'
-import helmet from 'helmet'
-import router from './routes.js'
-import { connect, getUri } from './db/index.js'
+const express = require('express');
+const helmet = require('helmet');
+const router = require('./router');
+const { connect, getUri } = require('./db');
 
-//import app from express()
 const app = express();
 
 const con = async () => {
-  const uri = await getUri()
-  return await connect({ uri })
+  const uri = await getUri(process.env.NODE_ENV)
+  return connect({ uri })
 }
 
 con()
 app.use(express.json())
-app.use(router)
+app.use('/', router)
+
 app.use(helmet.hidePoweredBy());
 
-export default app
-//module.exports.app = app
+module.exports = app

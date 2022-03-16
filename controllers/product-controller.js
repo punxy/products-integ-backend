@@ -1,7 +1,7 @@
-import { getProducts, getProductById } from '../services/product-service.js'
-import { isItAId } from '../utils.js'
+const { getProducts, getProductById } = require('../services/product-service');
+const { isItAId } = require('../utils')
 
-export const getPromotions = async (req, res) => {
+const getPromotions = async (req, res) => {
 
   const find = req.query.find
   let results;
@@ -13,4 +13,8 @@ export const getPromotions = async (req, res) => {
   }
 
   res.status(201).json(results)
+}
+
+module.exports = {
+  getPromotions
 }

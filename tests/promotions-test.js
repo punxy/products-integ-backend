@@ -43,10 +43,11 @@ test('get product without discount', async t => {
 
 test('get product by id', async t => {
     const filters = { find: 1 }
+
     const response = await request(app)
         .get('/promotions')
         .query(filters);
 
     const products = response.body.products
-    t.true(products.length == 1)
+    t.deepEqual(products.length, 1)
 })

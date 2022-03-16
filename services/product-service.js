@@ -1,12 +1,20 @@
-import Product from '../models/Product.js'
-import { isItAPalindrome } from '../utils.js'
+const Product = require('../models/Product');
+const { isItAPalindrome } = require('../utils');
 
-export const getProducts = async filter => {
+const getProducts = async filter => {
   let discount = false;
-  const products = await Product.find({
-    $or: [{description: filter},{brand: filter}],
-  })
+  let query = {};
 
+  if(typeof filter !== 'undefined' ){
+    query = {
+      $or: [
+        {description: filter.toString()},
+        {brand: filter.toString()}
+      ],
+    }
+  }
+  
+  const products = await Product.find(query)
   const isAPalindrome = isItAPalindrome(filter)
 
   if(products.length == 0){
@@ -30,20 +38,28 @@ export const getProducts = async filter => {
   };
 }
 
-export const getProductById = async id => {
+const getProductById = async id => {
 
   let discount = false;
-  const product = await Product.findOne({
-    'id': id
-  });
+  const query = {
+    'id': id.toString()
+  }
+  
+  const product = await Product.findOne(query).lean();
+  const newProduct = Object.assign({} , product);
 
   if(isItAPalindrome(id)){
     discount = true
-    product.price = product.price * 0.5
+    newProduct.price = newProduct.price * 0.5
   }
 
   return {
     discount,
-    products: [product]
+    products: [newProduct]
   }
+}
+
+module.exports = {
+  getProducts,
+  getProductById
 }

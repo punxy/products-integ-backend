@@ -4,3 +4,5 @@ node_modules
 .env
 
 workspace.code-workspace
+
+.nyc_output/
