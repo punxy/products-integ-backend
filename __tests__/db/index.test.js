@@ -1,5 +1,5 @@
 const { connect } = require("mongoose");
-const { getUri } = require("../../db")
+const { getUri } = require("../../src/db")
 
 describe('DB Test', () => {
     test('get uri environment dev', async () => {

@@ -1,9 +1,9 @@
 const request = require('supertest')
-const app = require('../../app.js')
-const dataSeed = require('../../db/seed')
+const app = require('../../src/app.js')
+const dataSeed = require('../../src/db/seed')
 
-const { closeDb } = require("../../db")
-const Product = require('../../models/Product.js')
+const { closeDb } = require("../../src/db")
+const Product = require('../../src/models/Product.js')
 
 beforeAll(async () => {
     dataSeed.forEach( async value => {

@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1647447306723" clover="3.2.0">
-  <project timestamp="1647447306723" name="All files">
-    <metrics statements="98" coveredstatements="97" conditionals="24" coveredconditionals="23" methods="11" coveredmethods="11" elements="133" coveredelements="131" complexity="0" loc="98" ncloc="98" packages="5" files="8" classes="8"/>
+<coverage generated="1647475345818" clover="3.2.0">
+  <project timestamp="1647475345818" name="All files">
+    <metrics statements="99" coveredstatements="98" conditionals="26" coveredconditionals="24" methods="11" coveredmethods="11" elements="136" coveredelements="133" complexity="0" loc="99" ncloc="99" packages="5" files="8" classes="8"/>
     <package name="src">
-      <metrics statements="38" coveredstatements="38" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
+      <metrics statements="39" coveredstatements="39" conditionals="10" coveredconditionals="9" methods="4" coveredmethods="4"/>
       <file name="app.js" path="/Users/sebastiansilva/node/products-integ-backend/src/app.js">
-        <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="9" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="10" count="2" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="14" count="2" type="stmt"/>
@@ -75,8 +76,8 @@
         <line num="2" count="3" type="stmt"/>
         <line num="4" count="3" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="8" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="3" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
         <line num="12" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="15" count="3" type="stmt"/>

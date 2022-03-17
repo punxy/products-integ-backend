@@ -1,4 +1,4 @@
-const { isItAId, isItAPalindrome } = require("../utils");
+const { isItAId, isItAPalindrome } = require("../src/utils");
 
 
 describe('UTILS - isItAId', () => {

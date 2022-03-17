@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-  <file path="/Users/sebastiansilva/node/products-integ-backend/src/__tests__/utils.test.js">
+  <file path="/Users/sebastiansilva/node/products-integ-backend/__tests__/utils.test.js">
     <testCase name="UTILS - isItAId with a number" duration="2"/>
     <testCase name="UTILS - isItAId with a string number" duration="0"/>
-    <testCase name="UTILS - isItAId with a string" duration="0"/>
-    <testCase name="UTILS - isItAId with a null" duration="1"/>
+    <testCase name="UTILS - isItAId with a string" duration="1"/>
+    <testCase name="UTILS - isItAId with a null" duration="0"/>
     <testCase name="UTILS - isItAId with a empty value" duration="0"/>
-    <testCase name="UTILS - isItAPalindrome with a palindrome number" duration="0"/>
-    <testCase name="UTILS - isItAPalindrome with a not palindrome number" duration="1"/>
+    <testCase name="UTILS - isItAPalindrome with a palindrome number" duration="1"/>
+    <testCase name="UTILS - isItAPalindrome with a not palindrome number" duration="0"/>
     <testCase name="UTILS - isItAPalindrome with a palindrome string" duration="0"/>
-    <testCase name="UTILS - isItAPalindrome with a not palindrome string" duration="0"/>
-    <testCase name="UTILS - isItAPalindrome with a empty string" duration="1"/>
+    <testCase name="UTILS - isItAPalindrome with a not palindrome string" duration="1"/>
+    <testCase name="UTILS - isItAPalindrome with a empty string" duration="0"/>
     <testCase name="UTILS - isItAPalindrome with a empty string" duration="0"/>
   </file>
-  <file path="/Users/sebastiansilva/node/products-integ-backend/src/__tests__/server.test.js">
-    <testCase name="Server server run" duration="28"/>
+  <file path="/Users/sebastiansilva/node/products-integ-backend/__tests__/db/index.test.js">
+    <testCase name="DB Test get uri environment dev" duration="1"/>
+    <testCase name="DB Test get uri environment test" duration="221"/>
   </file>
-  <file path="/Users/sebastiansilva/node/products-integ-backend/src/__tests__/db/index.test.js">
-    <testCase name="DB Test get uri environment dev" duration="528"/>
-    <testCase name="DB Test get uri environment test" duration="134"/>
+  <file path="/Users/sebastiansilva/node/products-integ-backend/__tests__/server.test.js">
+    <testCase name="Server server run" duration="22"/>
   </file>
-  <file path="/Users/sebastiansilva/node/products-integ-backend/src/__tests__/controllers/promotions.test.js">
-    <testCase name="Get products list With empty filters" duration="258"/>
-    <testCase name="Get products list With a palindrome word" duration="9"/>
-    <testCase name="Get products list Without a palindrome word" duration="4"/>
-    <testCase name="Get products list With not results" duration="3"/>
+  <file path="/Users/sebastiansilva/node/products-integ-backend/__tests__/controllers/promotions.test.js">
+    <testCase name="Get products list With empty filters" duration="222"/>
+    <testCase name="Get products list With a palindrome word" duration="8"/>
+    <testCase name="Get products list Without a palindrome word" duration="7"/>
+    <testCase name="Get products list With not results" duration="5"/>
     <testCase name="Get product By palindrome Id " duration="5"/>
-    <testCase name="Get product By not palindrome Id" duration="5"/>
-    <testCase name="Get product With empty id" duration="4"/>
+    <testCase name="Get product By not palindrome Id" duration="3"/>
+    <testCase name="Get product With empty id" duration="3"/>
   </file>
 </testExecutions>

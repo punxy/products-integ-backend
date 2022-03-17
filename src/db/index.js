@@ -4,12 +4,12 @@ const { MongoMemoryServer } = require('mongodb-memory-server');
 mongoose.Promise = Promise
 
 const getUri = async (node_env) => {
-  const mongoServer = await MongoMemoryServer.create()
   if (node_env == 'test') {
+    const mongoServer = await MongoMemoryServer.create()
     return mongoServer.getUri()
   }
 
-  return process.env.DB_URI || 'mongodb://productListUser:productListPassword@localhost:27017/promotions?authSource=admin'
+  return process.env.DB_URI || 'mongodb+srv://productListUser:productListPassword@integ-cluster.fylem.mongodb.net/promotions?retryWrites=true&w=majority'
 }
 
 const connect = async ({ uri }) => {
